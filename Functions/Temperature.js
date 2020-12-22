@@ -1,5 +1,6 @@
 const readline = require('readline-sync');
-let number = readline.questionInt("Enter 1 for fahernhit to centigrade and 2 for viceversa");
+console.log("Enter temperature less than 32 and greater than 212 for F-C\n"+
+			"Enter tempwrature less than 100 for C-F");
 let temp_str = readline.questionInt("Enter temperature: ");
 let temp = parseInt(temp_str);
 // Converts farenheits to degree centigrades temperature
@@ -18,10 +19,9 @@ function centigradeToDegreeFarenheit(temp) {
 	}
 	console.log("temp in degF is: " + ((temp * 9 / 5) + 32));
 }
-if (number == 1) {
+console.log("Enter y for F-C\n"+"Enter n for C-F");
+if (readline.keyInYN("Enter your key:")) {
 	farenheitToDegreeCentigrade(temp);
-} else if(number==2) {
+} else{
 	centigradeToDegreeFarenheit(temp);
-}else{
-    console.log("enter valid number");
 }
